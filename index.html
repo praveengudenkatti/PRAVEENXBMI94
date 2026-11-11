@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRAVEEN GUDENKATTI | Hacker Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ background:#020806;
+ color:#eafff0;
+ font-family:'Rajdhani',sans-serif;
+ overflow-x:hidden;
+}
+:root{
+ --green:#00ff66;
+ --cyan:#00ffff;
+ --dark:#020806;
+}
+#matrix{
+ position:fixed;inset:0;
+ width:100%;height:100%;
+ z-index:-1;opacity:.18;
+}
+.container{max-width:1150px;margin:auto;padding:0 25px}
+header{
+ position:fixed;top:0;width:100%;
+ background:rgba(0,10,5,.85);
+ backdrop-filter:blur(15px);
+ border-bottom:1px solid #00ff6633;
+ z-index:100;
+}
+nav{
+ height:75px;display:flex;
+ align-items:center;justify-content:space-between;
+}
+.logo{
+ font-family:Orbitron;
+ font-size:19px;font-weight:800;
+ color:var(--green);
+ text-shadow:0 0 15px var(--green);
+}
+nav a{
+ color:white;text-decoration:none;
+ margin-left:22px;font-size:17px;
+ transition:.3s;
+}
+nav a:hover{color:var(--green)}
+.hero{
+ min-height:100vh;
+ display:flex;align-items:center;
+ padding-top:90px;
+}
+.hero-content{text-align:center;width:100%}
+.profile{
+ width:180px;height:180px;
+ border-radius:50%;
+ border:4px solid var(--green);
+ box-shadow:0 0 25px var(--green),0 0 70px #00ff6655;
+ object-fit:cover;
+ margin-bottom:30px;
+ animation:float 3s infinite ease-in-out;
+}
+@keyframes float{
+ 50%{transform:translateY(-12px)}
+}
+.tag{
+ display:inline-block;
+ border:1px solid var(--green);
+ color:var(--green);
+ padding:8px 22px;
+ border-radius:30px;
+ letter-spacing:3px;
+ margin-bottom:20px;
+}
+h1{
+ font-family:Orbitron;
+ font-size:clamp(27px,6vw,55px);
+ margin-bottom:15px;
+}
+h1 span{
+ color:var(--green);
+ text-shadow:0 0 20px var(--green);
+}
+.typing{
+ color:var(--cyan);
+ font-size:24px;
+ margin-bottom:20px;
+}
+.description{
+ max-width:650px;
+ margin:auto;
+ color:#a8c9b4;
+ font-size:19px;
+ line-height:1.7;
+}
+.buttons{margin-top:30px}
+.btn{
+ display:inline-block;
+ padding:13px 28px;
+ margin:8px;
+ border-radius:5px;
+ text-decoration:none;
+ font-weight:700;
+ font-size:17px;
+ transition:.3s;
+}
+.primary{
+ background:var(--green);
+ color:#001b0b;
+ box-shadow:0 0 20px #00ff6680;
+}
+.secondary{
+ border:1px solid var(--green);
+ color:var(--green);
+}
+.btn:hover{transform:translateY(-5px);box-shadow:0 0 25px var(--green)}
+section{padding:100px 0}
+.heading{
+ text-align:center;
+ font-family:Orbitron;
+ font-size:30px;
+ margin-bottom:45px;
+}
+.heading span{color:var(--green)}
+.about{
+ max-width:850px;
+ margin:auto;
+ text-align:center;
+ color:#a8c9b4;
+ font-size:20px;
+ line-height:1.8;
+}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:22px;
+}
+.card{
+ background:#06150d;
+ border:1px solid #00ff6633;
+ padding:30px 20px;
+ text-align:center;
+ border-radius:12px;
+ transition:.3s;
+}
+.card:hover{
+ transform:translateY(-8px);
+ border-color:var(--green);
+ box-shadow:0 0 25px #00ff6625;
+}
+.card i{
+ font-size:35px;
+ color:var(--green);
+ margin-bottom:18px;
+}
+.card h3{
+ font-family:Orbitron;
+ font-size:17px;
+ margin-bottom:12px;
+}
+.card p{color:#9bc9aa;font-size:17px}
+.project-icon{
+ font-size:40px;
+ color:var(--cyan);
+ margin-bottom:15px;
+}
+.contact{text-align:center}
+.contact p{color:#9bc9aa;font-size:19px}
+footer{
+ text-align:center;
+ padding:25px;
+ border-top:1px solid #00ff6633;
+ color:#71947e;
+}
+footer span{color:var(--green)}
+@media(max-width:650px){
+ nav a{margin-left:10px;font-size:14px}
+ .logo{font-size:14px}
+ .profile{width:145px;height:145px}
+ section{padding:75px 0}
+ .heading{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">PRAVEEN.DEV</div>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<img class="profile"
+src="https://tinyurl.com/22x4drcy"
+alt="Praveen Profile">
+
+<div class="tag">SYSTEM ONLINE ●</div>
+
+<h1>I AM <span>PRAVEEN</span></h1>
+
+<div class="typing" id="typing"></div>
+
+<p class="description">
+Creative Developer | Web Designer | Coder |
+Telegram Bot Designer. I create modern websites,
+powerful digital experiences and creative designs.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn primary">
+<i class="fas fa-code"></i> My Projects
+</a>
+<a href="#contact" class="btn secondary">
+<i class="fas fa-terminal"></i> Contact Me
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<h2 class="heading">ABOUT <span>ME</span></h2>
+<p class="about">
+Hello! I am Praveen Gudenkatti.
+I am a passionate Developer, Coder and Designer.
+I enjoy creating modern websites, designing
+Telegram bots and building creative digital projects.
+My goal is to turn ideas into reality through code.
+</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+<h2 class="heading">MY <span>SKILLS</span></h2>
+<div class="grid">
+
+<div class="card">
+<i class="fab fa-html5"></i>
+<h3>HTML</h3>
+<p>Website Structure</p>
+</div>
+
+<div class="card">
+<i class="fab fa-css3-alt"></i>
+<h3>CSS</h3>
+<p>Modern UI Design</p>
+</div>
+
+<div class="card">
+<i class="fab fa-js"></i>
+<h3>JavaScript</h3>
+<p>Interactive Websites</p>
+</div>
+
+<div class="card">
+<i class="fab fa-php"></i>
+<h3>PHP</h3>
+<p>Backend Development</p>
+</div>
+
+<div class="card">
+<i class="fas fa-palette"></i>
+<h3>Graphic Design</h3>
+<p>Creative Graphics</p>
+</div>
+
+<div class="card">
+<i class="fab fa-telegram"></i>
+<h3>Telegram Bots</h3>
+<p>Bot UI & Design</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+<h2 class="heading">MY <span>PROJECTS</span></h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="project-icon"><i class="fas fa-globe"></i></div>
+<h3>WEBSITE DESIGN</h3>
+<p>Modern and responsive website designs.</p>
+</div>
+
+<div class="card">
+<div class="project-icon"><i class="fab fa-telegram"></i></div>
+<h3>TELEGRAM PROJECTS</h3>
+<p>Telegram bot interfaces and creative designs.</p>
+</div>
+
+<div class="card">
+<div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+<h3>WEB DEVELOPMENT</h3>
+<p>Creative frontend and backend projects.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container contact">
+<h2 class="heading">CONTACT <span>ME</span></h2>
+
+<p>Let's build something amazing together!</p>
+
+<div class="buttons">
+<a href="https://t.me/" class="btn primary">
+<i class="fab fa-telegram"></i> Telegram
+</a>
+
+<a href="mailto:your@email.com" class="btn secondary">
+<i class="fas fa-envelope"></i> Email
+</a>
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 <span>PRAVEEN GUDENKATTI</span> |
+ALL RIGHTS RESERVED.
+</footer>
+
+<script>
+// MATRIX ANIMATION
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+
+function resize(){
+ canvas.width=window.innerWidth;
+ canvas.height=window.innerHeight;
+}
+resize();
+window.addEventListener("resize",resize);
+
+const letters="01PRAVEEN<>/{}[]HACKER";
+const fontSize=14;
+let drops=[];
+
+function init(){
+ drops=Array(Math.floor(canvas.width/fontSize))
+ .fill(1);
+}
+init();
+window.addEventListener("resize",init);
+
+function draw(){
+ ctx.fillStyle="rgba(2,8,6,0.08)";
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+ ctx.fillStyle="#00ff66";
+ ctx.font=fontSize+"px monospace";
+
+ for(let i=0;i<drops.length;i++){
+  const char=letters[Math.floor(Math.random()*letters.length)];
+  ctx.fillText(char,i*fontSize,drops[i]*fontSize);
+
+  if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
+   drops[i]=0;
+  }
+  drops[i]++;
+ }
+}
+setInterval(draw,45);
+
+// TYPING ANIMATION
+const words=[
+ "Web Developer",
+ "Creative Designer",
+ "Professional Coder",
+ "Telegram Bot Designer"
+];
+
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
+
+function type(){
+ const current=words[wordIndex];
+ document.getElementById("typing").textContent=
+ current.substring(0,charIndex);
+
+ if(!deleting){
+  charIndex++;
+  if(charIndex>current.length){
+   deleting=true;
+   setTimeout(type,1000);
+   return;
+  }
+ }else{
+  charIndex--;
+  if(charIndex<0){
+   deleting=false;
+   wordIndex=(wordIndex+1)%words.length;
+  }
+ }
+ setTimeout(type,deleting?50:100);
+}
+type();
+</script>
+
+</body>
+  </html>
